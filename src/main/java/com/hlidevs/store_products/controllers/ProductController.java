@@ -18,9 +18,14 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
     public List<Product> getProducts() {
         return productService.getProducts();
+    }
+
+    @GetMapping("/hola")
+    public String hola() {
+        return "Hola";
     }
 }
